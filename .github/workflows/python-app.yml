@@ -4,8 +4,8 @@
 name: Python application
 
 on:
-  issues:
-    branches: [ "main" ]
+  schedule:
+    - cron:  '*/5 * * * *'
 
 permissions:
   contents: read
