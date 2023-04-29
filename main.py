@@ -14,7 +14,7 @@ txt="""**请认准 OIso | OI搜 唯一官方机器人账号 ！**
 
 今天的微博热搜：.weibotop.
 
-更新时间：.date.
+更新时间（UTC）：.date.
 
 动态主页支持：@George_jiang
 
