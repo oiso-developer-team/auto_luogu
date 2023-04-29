@@ -8,7 +8,7 @@ token = os.environ["token"]
 # 先实现登录
 f=open("a.txt","w")
 cookies={"__client_id":token,"_uid":"459900"}
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 Edg/94.0.992.47"}
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 Edg/94.0.992.47 BOTE"}
 got=r.get("https://www.luogu.com.cn/problem/list?type=P&page=1", headers=headers,cookies=cookies)
 msg=got.text.split('window._feInjection = JSON.parse(decodeURIComponent("')[1].split('            window._feConfigVersion =')[0]
 temp2=u.unquote(msg)
@@ -40,6 +40,7 @@ for i in que:
     temp3=u.unquote(msg2)
     if msg=="true":
         data.append(["P",i,1,temp2.split('"difficulty":')[1].split(',')[0],temp3.split(',"tags":')[1].split(',"')[0].replace('"', '')])
+        print(i)
     else:
         data.append(["P",i,0,temp2.split('"difficulty":')[1].split(',')[0],temp3.split(',"tags":')[1].split(',"')[0].replace('"', '')])
     t.sleep(0.8)#这行是最最关键的一句代码，千万千万不要删除！
